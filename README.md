@@ -25,10 +25,15 @@ This inventory is intended to aid data recovery tool creation, and give a starti
 * Contains checksums of varying lengths (including 16, 20, 32, 44, and 65-length checksums)
 * Specification of format is published: https://www.bitcoinarmory.com/wallet-format/
 
+## Blockchain.info Wallet
+* Many versions throughout time.
+* v1: `wallet.aes.json` contains 514 characters of base64 data (384 bytes when decoded). Do not decode the file (514 is the correct size); it should remain as base64.
+* v2 to v4: regular JSON files, with only some parts encrypted.
 
 ## MultiBit Wallet Keys Export
 
 * Example Name: `bitcoin-wallet-keys-2013-12-05`
+  * Sometimes has a `.key` extension
 * Storage Type: \< 500-byte base64-encoded encrypted string
 * Strings in the file:
   * Starts with ASCII: `U2FsdGVkX18` -> "Salted__", when decoded from base64 to ASCII
